@@ -1,48 +1,79 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Reservas - Hotel Mediterráneo</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Reservas — Mar del Sol</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-    <header>
-        <h1>Reservas</h1>
-        <button class="menu-toggle" aria-label="Abrir menú">&#9776;</button>
-        <nav>
-            <a href="index.html#inicio">Inicio</a>
-            <a href="index.html#habitaciones">Habitaciones</a>
-            <a href="index.html#servicios">Servicios</a>
-            <a href="index.html#contacto">Contacto</a>
-            <a href="reservas.html" class="active">Reservas</a>
-        </nav>
-    </header>
-    <section>
-        <h2 style="color:#bfa77a;text-align:center;">Reserva tu estancia</h2>
-        <form class="reserva-form" style="max-width:400px;margin:2rem auto;">
-            <label for="nombre">Nombre:</label>
-            <input type="text" id="nombre" name="nombre" required>
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required>
-            <label for="fecha-entrada">Fecha de entrada:</label>
-            <input type="date" id="fecha-entrada" name="fecha-entrada" required>
-            <label for="fecha-salida">Fecha de salida:</label>
-            <input type="date" id="fecha-salida" name="fecha-salida" required>
-            <label for="habitacion">Tipo de habitación:</label>
-            <select id="habitacion" name="habitacion" required>
-                <option value="">Selecciona una opción</option>
-                <option value="suite">Suite Vista al Mar</option>
-                <option value="deluxe">Habitación Deluxe</option>
-                <option value="junior">Junior Suite</option>
-            </select>
-            <button type="submit" class="btn" style="width:100%;margin-top:1.5rem;">Reservar</button>
-        </form>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="brand"><span class="brand-mark">✦</span> Mar del Sol</a>
+      <button class="menu-toggle" aria-label="Abrir menú" aria-expanded="false">☰</button>
+      <nav class="site-nav">
+        <a href="index.html#inicio">Inicio</a>
+        <a href="habitaciones.html">Habitaciones</a>
+        <a href="index.html#galeria">Galería</a>
+        <a href="index.html#contacto">Contacto</a>
+        <a href="reservas.html" class="btn-nav active">Reservas</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-hero sea">
+      <div class="container">
+        <h1 class="reveal-up">Reserva tu estancia</h1>
+        <p class="section-sub reveal-up delay-1">Fechas, huéspedes y preferencia de habitación.</p>
+      </div>
     </section>
-    <footer>
-        &copy; 2025 Mar Del Sol. Todos los derechos reservados.
-    </footer>
-    <script src="main.js"></script>
+
+    <section class="container">
+      <form class="booking-form reveal-up" id="bookingForm" novalidate>
+        <div class="grid-2">
+          <label>Nombre
+            <input type="text" name="nombre" required>
+          </label>
+          <label>Email
+            <input type="email" name="email" required>
+          </label>
+        </div>
+        <div class="grid-3">
+          <label>Entrada
+            <input type="date" name="entrada" required>
+          </label>
+          <label>Salida
+            <input type="date" name="salida" required>
+          </label>
+          <label>Habitación
+            <select name="tipo" required>
+              <option value="">Selecciona una opción</option>
+              <option value="suite">Suite Vista al Mar</option>
+              <option value="deluxe">Habitación Deluxe</option>
+              <option value="junior">Junior Suite</option>
+            </select>
+          </label>
+        </div>
+        <button type="submit" class="btn primary">Reservar</button>
+        <p class="form-msg" id="formMsg" role="status" aria-live="polite"></p>
+      </form>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© 2025 Mar del Sol. Todos los derechos reservados.</p>
+      <nav class="footer-nav">
+        <a href="index.html#inicio">Inicio</a>
+        <a href="habitaciones.html">Habitaciones</a>
+        <a href="index.html#galeria">Galería</a>
+        <a href="reservas.html">Reservas</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
 </body>
 </html>

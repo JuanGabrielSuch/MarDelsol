@@ -1,56 +1,80 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Habitaciones - Hotel Mediterráneo</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
-    <style>
-       
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Habitaciones — Mar del Sol</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-    <header>
-        <h1>Habitaciones</h1>
-        <button class="menu-toggle" aria-label="Abrir menú">&#9776;</button>
-        <nav>
-            <a href="index.html#inicio">Inicio</a>
-            <a href="habitaciones.html" class="active">Habitaciones</a>
-            <a href="index.html#servicios">Servicios</a>
-            <a href="index.html#contacto">Contacto</a>
-            <a href="reservas.html">Reservas</a>
-        </nav>
-    </header>
-    <section class="habitaciones-hero">
-        <h2 style="color:#bfa77a;">Descubre nuestras habitaciones</h2>
-        <p>Elige tu espacio ideal para disfrutar del Mediterráneo con estilo y confort.</p>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="brand"><span class="brand-mark">✦</span> Mar del Sol</a>
+      <button class="menu-toggle" aria-label="Abrir menú" aria-expanded="false">☰</button>
+      <nav class="site-nav">
+        <a href="index.html#inicio">Inicio</a>
+        <a href="habitaciones.html" class="active">Habitaciones</a>
+        <a href="index.html#galeria">Galería</a>
+        <a href="index.html#contacto">Contacto</a>
+        <a href="reservas.html" class="btn-nav">Reservas</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-hero sand">
+      <div class="container">
+        <h1 class="reveal-up">Habitaciones</h1>
+        <p class="section-sub reveal-up delay-1">Espacios luminosos con calma mediterránea.</p>
+      </div>
     </section>
-    <section>
-        <div class="habitaciones-list">
-            <div class="habitacion-card">
-                <img class="habitacion-img" src="https://images.unsplash.com/photo-1507089947368-19c1da9775ae?auto=format&fit=crop&w=800&q=80" alt="Suite Vista al Mar">
-                <div class="habitacion-info">
-                    <h3>Suite Vista al Mar</h3>
-                    <p>Impresionantes vistas al Mediterráneo, balcón privado y diseño moderno. Todas las comodidades para una estancia inolvidable.</p>
-                    <div class="habitacion-precio">Desde 180€/noche</div>
-                    <a href="reservas.html" class="btn-reserva">Reservar</a>
-                </div>
-            </div>
-            <div class="habitacion-card">
-                <img class="habitacion-img" src="https://images.unsplash.com/photo-1519710164239-da123dc03ef4?auto=format&fit=crop&w=800&q=80" alt="Habitación Deluxe">
-                <div class="habitacion-info">
-                    <h3>Habitación Deluxe</h3>
-                    <p>Espacios amplios, decoración cálida y acceso directo a la piscina. Ideal para relajarse y desconectar en un entorno mediterráneo.</p>
-                    <div class="habitacion-precio">Desde 140€/noche</div>
-                    <a href="reservas.html" class="btn-reserva">Reservar</a>
-                </div>
-            </div>
+
+    <section class="rooms-grid container">
+      <article class="room-card reveal-up">
+        <img src="https://images.unsplash.com/photo-1507089947368-19c1da9775ae?auto=format&fit=crop&w=1200&q=80" alt="Suite Vista al Mar">
+        <div class="room-body">
+          <h3>Suite Vista al Mar</h3>
+          <p>Terraza privada, amaneceres de postal y un interior cálido con detalles en madera y fibras naturales.</p>
+          <div class="price">Desde 180 €/noche</div>
+          <a href="reservas.html" class="btn primary">Reservar</a>
         </div>
+      </article>
+
+      <article class="room-card reveal-up delay-1">
+        <img src="https://images.unsplash.com/photo-1519710164239-da123dc03ef4?auto=format&fit=crop&w=1200&q=80" alt="Habitación Deluxe">
+        <div class="room-body">
+          <h3>Habitación Deluxe</h3>
+          <p>Amplia, luminosa y con acceso cercano a la piscina. Ideal para desconectar en pareja.</p>
+          <div class="price">Desde 140 €/noche</div>
+          <a href="reservas.html" class="btn primary">Reservar</a>
+        </div>
+      </article>
+
+      <article class="room-card reveal-up delay-2">
+        <img src="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&w=1200&q=80" alt="Junior Suite">
+        <div class="room-body">
+          <h3>Junior Suite</h3>
+          <p>Un equilibrio perfecto entre diseño y funcionalidad. Todo lo que necesitas para una estancia cómoda.</p>
+          <div class="price">Desde 120 €/noche</div>
+          <a href="reservas.html" class="btn primary">Reservar</a>
+        </div>
+      </article>
     </section>
-    <footer>
-        &copy; 2025 Mar Del Sol. Todos los derechos reservados.
-    </footer>
-    <script src="main.js"></script>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© 2025 Mar del Sol. Todos los derechos reservados.</p>
+      <nav class="footer-nav">
+        <a href="index.html#inicio">Inicio</a>
+        <a href="habitaciones.html">Habitaciones</a>
+        <a href="index.html#galeria">Galería</a>
+        <a href="reservas.html">Reservas</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
 </body>
 </html>

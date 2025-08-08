@@ -1,61 +1,116 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hotel Mediterráneo</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
-
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mar del Sol — Apartamentos Boutique en Benidorm</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+  <meta name="description" content="Apartamentos boutique en el casco antiguo de Benidorm. Estilo mediterráneo, confort y tranquilidad a un paso del mar." />
 </head>
 <body>
-    <header>
-        <h1>Mar Del Sol</h1>
-        <button class="menu-toggle" aria-label="Abrir menú">&#9776;</button>
-        <nav>
-            <a href="#inicio">Inicio</a>
-            <a href="habitaciones.html">Habitaciones</a>
-            <a href="#servicios">Servicios</a>
-            <a href="#contacto">Contacto</a>
-            <a href="reservas.html">Reservas</a>
-        </nav>
-    </header>
-    <section class="hero" id="inicio">
-        <img src="src/img/benidorm.webp" alt="Mar Del Sol">
-        <div class="hero-content">
-            <h2>Bienvenido al paraíso mediterráneo</h2>
-            <p>Descubre la elegancia y tranquilidad de nuestro hotel, donde el mar y la arena se mezclan con el lujo y el confort. Vive una experiencia única en un entorno moderno y acogedor.</p>
-            <a href="habitaciones.html" class="btn">Ver Habitaciones</a>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="brand" aria-label="Mar del Sol — Inicio">
+        <span class="brand-mark" aria-hidden="true">✦</span> Mar del Sol
+      </a>
+      <button class="menu-toggle" aria-label="Abrir menú" aria-expanded="false">☰</button>
+      <nav class="site-nav" role="navigation">
+        <a href="#inicio">Inicio</a>
+        <a href="habitaciones.html">Habitaciones</a>
+        <a href="#galeria">Galería</a>
+        <a href="#contacto">Contacto</a>
+        <a href="reservas.html" class="btn-nav">Reservas</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="inicio">
+    <section class="hero">
+      <picture>
+        <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1600&q=80" alt="Vista mediterránea en Benidorm" class="hero-img" />
+      </picture>
+      <div class="hero-content">
+        <h1 class="reveal-up">Tu refugio mediterráneo</h1>
+        <p class="lead reveal-up delay-1">Apartamentos boutique en el casco antiguo de Benidorm. Arena suave, brisa de mar y un diseño pensado para que descanses de verdad.</p>
+        <div class="hero-cta reveal-up delay-2">
+          <a href="habitaciones.html" class="btn primary">Ver habitaciones</a>
+          <a href="reservas.html" class="btn ghost">Reservar ahora</a>
         </div>
+      </div>
+      <div class="hero-badge">Costa Blanca</div>
     </section>
-    <section id="servicios">
-        <h2 style="color:#bfa77a;text-align:center;">Servicios</h2>
-        <div class="features">
-            <div class="feature">
-                <h3>Spa & Wellness</h3>
-                <p>Relájate en nuestro spa con tratamientos exclusivos y sauna.</p>
-            </div>
-            <div class="feature">
-                <h3>Restaurante Gourmet</h3>
-                <p>Saborea la mejor cocina mediterránea con ingredientes frescos y locales.</p>
-            </div>
-            <div class="feature">
-                <h3>Piscina Infinity</h3>
-                <p>Sumérgete en nuestra piscina con vistas panorámicas al mar.</p>
-            </div>
+
+    <!-- GALERÍA DINÁMICA (sustituye a 'Servicios') -->
+    <section id="galeria" class="gallery-section">
+      <div class="container">
+        <header class="section-head">
+          <h2>Galería</h2>
+          <p class="section-sub">Colores de arena y agua. Así se siente Mar del Sol.</p>
+        </header>
+
+        <div class="filters" role="tablist" aria-label="Filtros de galería">
+          <button class="filter-btn active" data-filter="todas" role="tab" aria-selected="true">Todas</button>
+          <button class="filter-btn" data-filter="mar" role="tab">Mar</button>
+          <button class="filter-btn" data-filter="interior" role="tab">Interiores</button>
+          <button class="filter-btn" data-filter="gastronomia" role="tab">Gastronomía</button>
+          <button class="filter-btn" data-filter="entorno" role="tab">Entorno</button>
         </div>
-    </section>
-    <section id="contacto">
-        <h2 style="color:#bfa77a;text-align:center;">Contacto</h2>
-        <div style="text-align:center;">
-            <p>Dirección: Calle Arena 123, Costa Mediterránea</p>
-            <p>Teléfono: +34 123 456 789</p>
-            <p>Email: info@hotelmediterraneo.com</p>
+
+        <div id="galleryGrid" class="gallery-grid" aria-live="polite"></div>
+      </div>
+
+      <!-- Lightbox / Modal -->
+      <dialog id="lightbox" class="lightbox">
+        <button class="lightbox-close" aria-label="Cerrar">×</button>
+        <img id="lightboxImg" alt="" />
+        <p id="lightboxCaption"></p>
+        <div class="lightbox-controls">
+          <button id="prevBtn" class="btn small" aria-label="Anterior">‹</button>
+          <button id="nextBtn" class="btn small" aria-label="Siguiente">›</button>
         </div>
+      </dialog>
     </section>
-    <footer>
-        &copy; 2025 Mar Del Sol. Todos los derechos reservados.
-    </footer>
-    <script src="main.js"></script>
+
+    <section id="contacto" class="contact-section">
+      <div class="container two-col">
+        <div class="contact-copy reveal-up">
+          <h2>Contacto</h2>
+          <p class="section-sub">Estamos en el corazón del casco antiguo, a un paseo de la playa.</p>
+          <ul class="contact-list">
+            <li><strong>Dirección:</strong> Calle La Palma, Benidorm</li>
+            <li><strong>Teléfono:</strong> +34 123 456 789</li>
+            <li><strong>Email:</strong> hola@mardelsol.com</li>
+          </ul>
+        </div>
+        <form class="contact-form reveal-up delay-1" autocomplete="on">
+          <label>Nombre
+            <input type="text" name="nombre" required>
+          </label>
+          <label>Email
+            <input type="email" name="email" required>
+          </label>
+          <label>Mensaje
+            <textarea name="mensaje" rows="4" required></textarea>
+          </label>
+          <button type="submit" class="btn primary">Enviar</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© 2025 Mar del Sol. Todos los derechos reservados.</p>
+      <nav class="footer-nav">
+        <a href="#inicio">Inicio</a>
+        <a href="habitaciones.html">Habitaciones</a>
+        <a href="#galeria">Galería</a>
+        <a href="reservas.html">Reservas</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
 </body>
 </html>

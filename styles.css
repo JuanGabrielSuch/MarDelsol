@@ -1,319 +1,151 @@
-body {
-    margin: 0;
-    font-family: 'Montserrat', sans-serif;
-    background: linear-gradient(135deg, #f5e9da 0%, #e9d8c3 100%);
-    color: #5a4a3b;
-}
-header {
-    background: #f7f3ee;
-    padding: 2rem 0;
-    text-align: center;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
-}
-header h1 {
-    margin: 0;
-    font-size: 2.5rem;
-    letter-spacing: 2px;
-    color: #bfa77a;
-}
-nav {
-    margin-top: 1rem;
-}
-nav a {
-    color: #bfa77a;
-    text-decoration: none;
-    margin: 0 1rem;
-    font-weight: 700;
-    transition: color 0.2s;
-}
-nav a:hover {
-    color: #5a4a3b;
-}
-.hero {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 3rem 1rem;
-    background: #f5e9da;
-}
-.hero img {
-    width: 400px;
-    border-radius: 2rem;
-    margin-right: 2rem;
-    box-shadow: 0 4px 24px rgba(191,167,122,0.15);
-}
-.hero-content {
-    max-width: 500px;
-}
-.hero-content h2 {
-    font-size: 2rem;
-    color: #bfa77a;
-    margin-bottom: 1rem;
-}
-.hero-content p {
-    font-size: 1.1rem;
-    line-height: 1.7;
-}
-.btn {
-    display: inline-block;
-    margin-top: 2rem;
-    padding: 0.8rem 2rem;
-    background: #bfa77a;
-    color: #fff;
-    border: none;
-    border-radius: 2rem;
-    font-size: 1rem;
-    font-weight: 700;
-    cursor: pointer;
-    transition: background 0.2s;
-    text-decoration: none;
-}
-.btn:hover {
-    background: #a68c5a;
-}
-section {
-    padding: 3rem 1rem;
-    max-width: 900px;
-    margin: 0 auto;
-}
-.features {
-    display: flex;
-    gap: 2rem;
-    flex-wrap: wrap;
-    justify-content: center;
-}
-.feature {
-    background: #fff8ee;
-    border-radius: 1rem;
-    box-shadow: 0 2px 12px rgba(191,167,122,0.08);
-    padding: 2rem;
-    flex: 1 1 250px;
-    min-width: 250px;
-    text-align: center;
-}
-.feature h3 {
-    color: #bfa77a;
-    margin-bottom: 1rem;
-}
-footer {
-    background: #f7f3ee;
-    text-align: center;
-    padding: 2rem 0;
-    color: #bfa77a;
-    font-size: 1rem;
-    margin-top: 3rem;
+/* ====== Mar del Sol — Tema mediterráneo ====== */
+:root{
+  --sand:#CDB499;
+  --foam:#BBC5B9;
+  --sage:#8AA494;
+  --aqua:#78AAA1;
+  --ink:#2d2a26;
+  --cafe:#5a4a3b;
+  --paper:#fffdf8;
+  --shell:#fff8ee;
+  --shadow: 0 8px 30px rgba(0,0,0,.08);
 }
 
-.reserva-form {
-    background: #fff8ee;
-    border-radius: 1rem;
-    box-shadow: 0 2px 12px rgba(191,167,122,0.10);
-    padding: 2rem;
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  font-family:'Montserrat',system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+  color:var(--cafe);
+  background: linear-gradient(160deg, #f7efe3 0%, #efe6d8 30%, #e9e7e0 100%);
 }
 
-.reserva-form label {
-    font-weight: 700;
-    color: #bfa77a;
-    margin-bottom: 0.3rem;
+/* Layout helpers */
+.container{max-width:1100px;margin:0 auto;padding:0 1rem}
+.two-col{display:grid;grid-template-columns:1.2fr 1fr;gap:2rem}
+.grid-2{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
+
+.section-head{ text-align:center; margin-bottom:1.5rem}
+.section-head h2{font-size:2rem; color:var(--sand); margin:0}
+.section-sub{color:var(--cafe); opacity:.8}
+
+/* Header */
+.site-header{
+  position:sticky; top:0; z-index:50;
+  background:rgba(255,253,248,.75);
+  backdrop-filter:saturate(140%) blur(8px);
+  border-bottom:1px solid rgba(0,0,0,.04);
+}
+.header-inner{display:flex;align-items:center;justify-content:space-between;height:64px}
+.brand{display:inline-flex;align-items:center;gap:.5rem;text-decoration:none;color:var(--sand);font-weight:700}
+.brand-mark{display:inline-block;transform:translateY(-1px)}
+
+.site-nav{display:flex;gap:1rem;align-items:center}
+.site-nav a{color:var(--sand);text-decoration:none;font-weight:600; padding:.4rem .6rem; border-radius:.6rem}
+.site-nav a:hover{background:rgba(120,170,161,.12)}
+.site-nav .btn-nav{border:1px solid var(--aqua)}
+.site-nav .active{outline:2px solid rgba(205,180,153,.35)}
+
+.menu-toggle{display:none;background:none;border:none;font-size:1.6rem;color:var(--sand);cursor:pointer}
+
+/* Hero */
+.hero{position:relative;display:grid;grid-template-columns:1.1fr 1fr;align-items:center;gap:2rem;padding:4rem 1rem}
+.hero-img{
+  width:100%;border-radius:1.5rem;box-shadow:var(--shadow);
+  transform:translateY(10px) scale(1.02);opacity:0;animation:popIn .9s .15s forwards ease-out;
+}
+.hero-content h1{font-size:2.6rem;color:var(--sand);margin:.2rem 0 1rem}
+.lead{font-size:1.1rem;line-height:1.7}
+.hero-cta{display:flex;gap:.8rem;flex-wrap:wrap;margin-top:1.2rem}
+.hero-badge{
+  position:absolute; right:1rem; bottom:1rem; font-weight:700;
+  background:linear-gradient(135deg,var(--foam),var(--aqua));
+  color:#0d3431; padding:.5rem .8rem; border-radius:1rem; box-shadow:var(--shadow);
+  opacity:.9
 }
 
-.reserva-form input,
-.reserva-form select {
-    padding: 0.7rem;
-    border: 1px solid #bfa77a;
-    border-radius: 0.5rem;
-    font-size: 1rem;
-    background: #f7f3ee;
-    color: #5a4a3b;
-    margin-bottom: 0.5rem;
-    transition: border-color 0.2s;
+.btn{display:inline-block;border-radius:999px;padding:.7rem 1.2rem;text-decoration:none;font-weight:700;border:1px solid transparent;cursor:pointer}
+.btn.primary{background:var(--aqua); color:#07302d}
+.btn.ghost{border-color:var(--aqua); color:var(--aqua); background:transparent}
+.btn.small{padding:.4rem .7rem; font-weight:600}
+
+.page-hero{padding:3.5rem 1rem;margin-bottom:1rem; background:linear-gradient(120deg,var(--foam),var(--sand))}
+.page-hero.sea{background:linear-gradient(120deg,var(--aqua),var(--foam))}
+.page-hero.sand{background:linear-gradient(120deg,var(--sand),var(--foam))}
+.page-hero h1{color:#0f2e2b}
+.page-hero .section-sub{color:#14413c}
+
+/* Gallery */
+.filters{display:flex;gap:.5rem;justify-content:center;flex-wrap:wrap;margin:1rem 0 1.2rem}
+.filter-btn{border:none;border-radius:999px;padding:.5rem 1rem;cursor:pointer;background:var(--shell);box-shadow:var(--shadow);color:var(--cafe);font-weight:600;opacity:.9}
+.filter-btn.active, .filter-btn:hover{background:var(--aqua); color:#07302d}
+
+.gallery-grid{columns:1; column-gap:1rem}
+.gallery-item{break-inside:avoid; position:relative; margin-bottom:1rem; border-radius:1rem; overflow:hidden; box-shadow:var(--shadow); transform:translateY(10px); opacity:0; animation:fadeUp .6s forwards}
+.gallery-item img{width:100%; display:block}
+.gallery-item .caption{
+  position:absolute; left:.6rem; bottom:.6rem; background:rgba(0,0,0,.38); color:white; padding:.25rem .5rem; border-radius:.6rem; font-size:.85rem
 }
+.gallery-item:hover img{transform:scale(1.03); transition: transform .35s ease}
 
-.reserva-form input:focus,
-.reserva-form select:focus {
-    border-color: #5a4a3b;
-    outline: none;
+.lightbox{border:none; padding:0; width:min(92vw,1000px); border-radius:1rem; background:var(--paper)}
+.lightbox::backdrop{background:rgba(0,0,0,.55)}
+.lightbox img{width:100%; height:auto; display:block; border-radius:1rem 1rem 0 0}
+.lightbox-close{position:absolute; right:.6rem; top:.3rem; border:none; background:transparent; font-size:2rem; color:var(--cafe); cursor:pointer}
+.lightbox-controls{display:flex; gap:.5rem; justify-content:center; padding: .7rem}
+#lightboxCaption{text-align:center; padding:.5rem 1rem 1rem; margin:0}
+
+/* Contact */
+.contact-section{padding:3rem 0}
+.contact-list{list-style:none; padding:0; margin:0}
+.contact-list li{margin:.4rem 0}
+.contact-form{background:var(--paper); padding:1rem; border-radius:1rem; box-shadow:var(--shadow); display:grid; gap:.7rem}
+.contact-form input,.contact-form textarea,.booking-form input,.booking-form select{
+  width:100%; padding:.7rem .8rem; border-radius:.6rem; border:1px solid rgba(0,0,0,.08); background:#fff
 }
+.contact-form button{justify-self:start}
 
-.reserva-form button.btn {
-    background: #bfa77a;
-    color: #fff;
-    border: none;
-    border-radius: 2rem;
-    font-size: 1rem;
-    font-weight: 700;
-    cursor: pointer;
-    padding: 0.8rem 2rem;
-    transition: background 0.2s;
+/* Rooms */
+.rooms-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:1.2rem; margin:2rem auto}
+.room-card{background:var(--paper); border-radius:1rem; overflow:hidden; box-shadow:var(--shadow)}
+.room-card img{width:100%; height:220px; object-fit:cover}
+.room-body{padding:1rem}
+.room-body h3{color:var(--sand); margin:.2rem 0 .6rem}
+.room-body .price{font-weight:700; color:#0f2e2b; margin:.5rem 0 .8rem}
+
+/* Booking */
+.booking-form{background:var(--paper); padding:1rem; border-radius:1rem; box-shadow:var(--shadow); display:grid; gap:1rem}
+.form-msg{margin-top:.6rem}
+
+/* Footer */
+.site-footer{padding:2rem 0; background:#faf7f2; border-top:1px solid rgba(0,0,0,.05); margin-top:2rem}
+.footer-inner{display:flex; align-items:center; justify-content:space-between; gap:1rem; flex-wrap:wrap}
+.footer-nav a{color:var(--sand); text-decoration:none; margin-right:.8rem}
+
+/* Animations */
+@keyframes popIn{to{transform:none; opacity:1}}
+@keyframes fadeUp{to{transform:none; opacity:1}}
+.reveal-up{opacity:0; transform:translateY(14px)}
+.reveal-up.show{opacity:1; transform:none; transition: all .6s cubic-bezier(.2,.7,.2,1)}
+.delay-1{transition-delay:.15s}
+.delay-2{transition-delay:.3s}
+
+/* Responsive */
+@media (max-width: 900px){
+  .hero{grid-template-columns:1fr; padding:3rem 1rem}
+  .hero-badge{display:none}
+  .two-col{grid-template-columns:1fr}
+  .rooms-grid{grid-template-columns:1fr 1fr}
 }
-
-.reserva-form button.btn:hover {
-    background: #a68c5a;
+@media (max-width: 640px){
+  .menu-toggle{display:block}
+  .site-nav{position:absolute; inset:64px 0 auto 0; display:none; flex-direction:column; background:rgba(255,253,248,.98); padding:1rem; border-bottom:1px solid rgba(0,0,0,.05)}
+  .site-nav.open{display:flex}
+  .rooms-grid{grid-template-columns:1fr}
+  .grid-2,.grid-3{grid-template-columns:1fr}
+  .gallery-grid{columns:2}
 }
-
-
- .habitaciones-hero {
-            background: linear-gradient(120deg, #e9d8c3 60%, #bfa77a 100%);
-            padding: 3rem 1rem 2rem 1rem;
-            text-align: center;
-            color: #5a4a3b;
-            animation: fadeInDown 1s;
-        }
-        @keyframes fadeInDown {
-            from { opacity: 0; transform: translateY(-40px);}
-            to { opacity: 1; transform: translateY(0);}
-        }
-        .habitaciones-list {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 2rem;
-            justify-content: center;
-            margin: 2rem 0;
-        }
-        .habitacion-card {
-            background: #fff8ee;
-            border-radius: 1.5rem;
-            box-shadow: 0 4px 24px rgba(191,167,122,0.13);
-            width: 340px;
-            overflow: hidden;
-            transition: transform 0.3s, box-shadow 0.3s;
-            animation: fadeInUp 1s;
-        }
-        .habitacion-card:hover {
-            transform: translateY(-10px) scale(1.03);
-            box-shadow: 0 8px 32px rgba(191,167,122,0.18);
-        }
-        @keyframes fadeInUp {
-            from { opacity: 0; transform: translateY(40px);}
-            to { opacity: 1; transform: translateY(0);}
-        }
-        .habitacion-img {
-            width: 100%;
-            height: 180px;
-            object-fit: cover;
-            filter: brightness(0.95) sepia(0.1) hue-rotate(-10deg);
-        }
-        .habitacion-info {
-            padding: 1.5rem;
-        }
-        .habitacion-info h3 {
-            color: #bfa77a;
-            margin-bottom: 1rem;
-            font-size: 1.3rem;
-        }
-        .habitacion-info p {
-            font-size: 1.05rem;
-            margin-bottom: 1.2rem;
-        }
-        .habitacion-precio {
-            font-weight: bold;
-            color: #5a4a3b;
-            font-size: 1.1rem;
-            margin-bottom: 1rem;
-        }
-        .btn-reserva {
-            background: #bfa77a;
-            color: #fff;
-            border: none;
-            border-radius: 2rem;
-            font-size: 1rem;
-            font-weight: 700;
-            cursor: pointer;
-            padding: 0.7rem 1.5rem;
-            transition: background 0.2s;
-            text-decoration: none;
-            display: inline-block;
-        }
-        .btn-reserva:hover {
-            background: #a68c5a;
-        }
- @media (max-width: 900px) {
-    .hero {
-        flex-direction: column;
-        text-align: center;
-        padding: 2rem 1rem;
-    }
-    .hero img {
-        margin: 0 0 2rem 0;
-        width: 100%;
-        max-width: 350px;
-    }
-    .features {
-        flex-direction: column;
-        gap: 1.5rem;
-    }
-    section {
-        padding: 2rem 0.5rem;
-        max-width: 100%;
-    }
-    .reserva-form {
-        max-width: 100%;
-        padding: 1rem;
-    }
-    header h1 {
-        font-size: 2rem;
-    }
-    nav a {
-        margin: 0 0.5rem;
-        font-size: 1rem;
-    }
-}
-
-@media (max-width: 600px) {
-    .hero img {
-        max-width: 100%;
-        height: auto;
-    }
-    .habitacion-card {
-        width: 100%;
-        min-width: unset;
-    }
-    .habitaciones-list {
-        gap: 1rem;
-    }
-    .feature {
-        padding: 1rem;
-    }
-    .reserva-form {
-        padding: 0.5rem;
-    }
-}
-
-.menu-toggle {
-    display: none;
-    background: none;
-    border: none;
-    font-size: 2rem;
-    color: #bfa77a;
-    position: absolute;
-    right: 2rem;
-    top: 2rem;
-    cursor: pointer;
-    z-index: 100;
-}
-
-@media (max-width: 700px) {
-    nav {
-        display: none;
-        flex-direction: column;
-        background: #f7f3ee;
-        position: absolute;
-        top: 70px;
-        left: 0;
-        width: 100%;
-        box-shadow: 0 2px 8px rgba(0,0,0,0.04);
-        padding: 1rem 0;
-    }
-    nav.open {
-        display: flex;
-    }
-    .menu-toggle {
-        display: block;
-    }
-    header {
-        position: relative;
-    }
+@media (max-width: 420px){
+  .gallery-grid{columns:1}
 }
