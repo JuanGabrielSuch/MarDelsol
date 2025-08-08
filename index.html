@@ -4,9 +4,9 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Mar del Sol — Apartamentos Boutique en Benidorm</title>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css" />
   <meta name="description" content="Apartamentos boutique en el casco antiguo de Benidorm. Estilo mediterráneo, confort y tranquilidad a un paso del mar." />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
   <header class="site-header">
@@ -16,42 +16,50 @@
       </a>
       <button class="menu-toggle" aria-label="Abrir menú" aria-expanded="false">☰</button>
       <nav class="site-nav" role="navigation">
-        <a href="#inicio">Inicio</a>
+        <a href="index.html" class="active">Inicio</a>
         <a href="habitaciones.html">Habitaciones</a>
         <a href="#galeria">Galería</a>
-        <a href="#contacto">Contacto</a>
+        <a href="contacto.html">Contacto</a>
         <a href="reservas.html" class="btn-nav">Reservas</a>
       </nav>
     </div>
   </header>
 
   <main id="inicio">
-    <section class="hero">
-      <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1600&q=80" alt="Vista mediterránea en Benidorm" class="hero-img" />
-      <div class="hero-content">
-        <h1 class="reveal-up">Tu refugio mediterráneo</h1>
-        <p class="lead reveal-up delay-1">Apartamentos boutique en el casco antiguo de Benidorm. Arena suave, brisa de mar y un diseño pensado para que descanses de verdad.</p>
-        <div class="hero-cta reveal-up delay-2">
-          <a href="habitaciones.html" class="btn primary">Ver habitaciones</a>
-          <a href="reservas.html" class="btn ghost">Reservar ahora</a>
+    <section class="hero hero-gradient">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <h1 class="page-title with-blob">Tu refugio mediterráneo</h1>
+          <p class="lead">Apartamentos boutique en el casco antiguo de Benidorm. Arena, luz y calma a un paso del mar.</p>
+          <div class="hero-cta">
+            <a href="habitaciones.html" class="btn primary">Ver habitaciones</a>
+            <a href="reservas.html" class="btn ghost">Reservar ahora</a>
+          </div>
         </div>
+        <figure class="hero-media">
+          <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1600&q=80" alt="Olas suaves en la orilla" />
+        </figure>
       </div>
       <div class="hero-badge">Costa Blanca</div>
     </section>
 
-    <!-- GALERÍA JUSTIFIED -->
+    <section class="container highlights">
+      <ul class="highlight-grid">
+        <li class="reveal-up"><div class="hl-icon">⛱</div><h3>A 5 min de la playa</h3><p>Calle tranquila y todo a mano.</p></li>
+        <li class="reveal-up delay-1"><div class="hl-icon">🏡</div><h3>Diseño mediterráneo</h3><p>Madera, fibras naturales y luz.</p></li>
+        <li class="reveal-up delay-2"><div class="hl-icon">🗝</div><h3>Check-in ágil</h3><p>Entrada flexible y asistencia rápida.</p></li>
+        <li class="reveal-up delay-3"><div class="hl-icon">📶</div><h3>Wi‑Fi rápido</h3><p>Perfecto para teletrabajo.</p></li>
+      </ul>
+    </section>
+
     <section id="galeria" class="gallery-section">
       <div class="container">
-        <header class="section-head">
-          <h2>Galería</h2>
-          <p class="section-sub">Colores de arena y agua. Así se siente Mar del Sol.</p>
-        </header>
-
+        <h2 class="section-title with-blob">Galería</h2>
+        <p class="section-sub">Colores de arena y agua. Así se siente Mar del Sol.</p>
         <div id="filterChips" class="filters" role="tablist" aria-label="Filtros de galería"></div>
         <div id="galleryJustified" class="gallery-justified" aria-live="polite"></div>
       </div>
 
-      <!-- Lightbox / Modal -->
       <dialog id="lightbox" class="lightbox" aria-label="Vista ampliada de imagen">
         <button class="lightbox-close" aria-label="Cerrar">×</button>
         <img id="lightboxImg" alt="" />
@@ -63,38 +71,14 @@
       </dialog>
     </section>
 
-    <section class="features container">
-      <ul class="feature-list">
-        <li><span>✓</span> Ubicación privilegiada en el casco antiguo</li>
-        <li><span>✓</span> Suites con diseño mediterráneo</li>
-        <li><span>✓</span> Cancelación flexible</li>
-        <li><span>✓</span> Wi‑Fi de alta velocidad</li>
-      </ul>
-    </section>
-
-    <section id="contacto" class="contact-section">
-      <div class="container two-col">
-        <div class="contact-copy reveal-up">
-          <h2>Contacto</h2>
-          <p class="section-sub">Estamos en el corazón del casco antiguo, a un paseo de la playa.</p>
-          <ul class="contact-list">
-            <li><strong>Dirección:</strong> Calle La Palma, Benidorm</li>
-            <li><strong>Teléfono:</strong> +34 123 456 789</li>
-            <li><strong>Email:</strong> hola@mardelsol.com</li>
-          </ul>
+    <section class="cta container">
+      <div class="cta-card reveal-up">
+        <h3>¿Te vienes unos días?</h3>
+        <p>Elige tu habitación y comprueba disponibilidad.</p>
+        <div class="cta-actions">
+          <a class="btn primary" href="reservas.html">Reservar</a>
+          <a class="btn ghost" href="habitaciones.html">Ver habitaciones</a>
         </div>
-        <form class="contact-form reveal-up delay-1" autocomplete="on">
-          <label>Nombre
-            <input type="text" name="nombre" required>
-          </label>
-          <label>Email
-            <input type="email" name="email" required>
-          </label>
-          <label>Mensaje
-            <textarea name="mensaje" rows="4" required></textarea>
-          </label>
-          <button type="submit" class="btn primary">Enviar</button>
-        </form>
       </div>
     </section>
   </main>
@@ -103,9 +87,10 @@
     <div class="container footer-inner">
       <p>© 2025 Mar del Sol. Todos los derechos reservados.</p>
       <nav class="footer-nav">
-        <a href="#inicio">Inicio</a>
+        <a href="index.html">Inicio</a>
         <a href="habitaciones.html">Habitaciones</a>
         <a href="#galeria">Galería</a>
+        <a href="contacto.html">Contacto</a>
         <a href="reservas.html">Reservas</a>
       </nav>
     </div>

@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Reservas — Mar del Sol</title>
+  <title>Contacto — Mar del Sol</title>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css" />
 </head>
@@ -16,49 +16,47 @@
         <a href="index.html">Inicio</a>
         <a href="habitaciones.html">Habitaciones</a>
         <a href="index.html#galeria">Galería</a>
-        <a href="contacto.html">Contacto</a>
-        <a href="reservas.html" class="btn-nav active">Reservas</a>
+        <a href="contacto.html" class="active">Contacto</a>
+        <a href="reservas.html" class="btn-nav">Reservas</a>
       </nav>
     </div>
   </header>
 
   <main>
-    <section class="page-hero sea">
+    <section class="page-hero foam">
       <div class="container">
-        <h1 class="page-title with-blob">Reserva tu estancia</h1>
-        <p class="section-sub">Fechas, huéspedes y preferencia de habitación.</p>
+        <h1 class="page-title with-blob">Contacto</h1>
+        <p class="section-sub">Estamos en el corazón del casco antiguo, a un paseo de la playa.</p>
       </div>
     </section>
 
-    <section class="container">
-      <form class="booking-form reveal-up" id="bookingForm" novalidate>
-        <div class="grid-2">
+    <section class="container two-col contact-wrap">
+      <div>
+        <h3>Escríbenos</h3>
+        <form class="contact-form reveal-up" autocomplete="on">
           <label>Nombre
             <input type="text" name="nombre" required>
           </label>
           <label>Email
             <input type="email" name="email" required>
           </label>
-        </div>
-        <div class="grid-3">
-          <label>Entrada
-            <input type="date" name="entrada" required>
+          <label>Mensaje
+            <textarea name="mensaje" rows="6" required></textarea>
           </label>
-          <label>Salida
-            <input type="date" name="salida" required>
-          </label>
-          <label>Habitación
-            <select name="tipo" required>
-              <option value="">Selecciona una opción</option>
-              <option value="suite">Suite Vista al Mar</option>
-              <option value="deluxe">Habitación Deluxe</option>
-              <option value="junior">Junior Suite</option>
-            </select>
-          </label>
-        </div>
-        <button type="submit" class="btn primary">Reservar</button>
-        <p class="form-msg" id="formMsg" role="status" aria-live="polite"></p>
-      </form>
+          <button type="submit" class="btn primary">Enviar</button>
+        </form>
+        <ul class="contact-list">
+          <li><strong>Dirección:</strong> Calle La Palma, Benidorm</li>
+          <li><strong>Teléfono:</strong> +34 123 456 789</li>
+          <li><strong>Email:</strong> hola@mardelsol.com</li>
+        </ul>
+      </div>
+      <aside class="map-card reveal-up delay-1">
+        <iframe title="Mapa Benidorm"
+          src="https://www.openstreetmap.org/export/embed.html?bbox=-0.143%2C38.527%2C-0.102%2C38.555&layer=mapnik"
+          style="border:0;" allowfullscreen="" loading="lazy">
+        </iframe>
+      </aside>
     </section>
   </main>
 
