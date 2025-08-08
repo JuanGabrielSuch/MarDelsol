@@ -27,9 +27,7 @@
 
   <main id="inicio">
     <section class="hero">
-      <picture>
-        <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1600&q=80" alt="Vista mediterránea en Benidorm" class="hero-img" />
-      </picture>
+      <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1600&q=80" alt="Vista mediterránea en Benidorm" class="hero-img" />
       <div class="hero-content">
         <h1 class="reveal-up">Tu refugio mediterráneo</h1>
         <p class="lead reveal-up delay-1">Apartamentos boutique en el casco antiguo de Benidorm. Arena suave, brisa de mar y un diseño pensado para que descanses de verdad.</p>
@@ -41,7 +39,7 @@
       <div class="hero-badge">Costa Blanca</div>
     </section>
 
-    <!-- GALERÍA DINÁMICA (sustituye a 'Servicios') -->
+    <!-- GALERÍA JUSTIFIED -->
     <section id="galeria" class="gallery-section">
       <div class="container">
         <header class="section-head">
@@ -49,19 +47,12 @@
           <p class="section-sub">Colores de arena y agua. Así se siente Mar del Sol.</p>
         </header>
 
-        <div class="filters" role="tablist" aria-label="Filtros de galería">
-          <button class="filter-btn active" data-filter="todas" role="tab" aria-selected="true">Todas</button>
-          <button class="filter-btn" data-filter="mar" role="tab">Mar</button>
-          <button class="filter-btn" data-filter="interior" role="tab">Interiores</button>
-          <button class="filter-btn" data-filter="gastronomia" role="tab">Gastronomía</button>
-          <button class="filter-btn" data-filter="entorno" role="tab">Entorno</button>
-        </div>
-
-        <div id="galleryGrid" class="gallery-grid" aria-live="polite"></div>
+        <div id="filterChips" class="filters" role="tablist" aria-label="Filtros de galería"></div>
+        <div id="galleryJustified" class="gallery-justified" aria-live="polite"></div>
       </div>
 
       <!-- Lightbox / Modal -->
-      <dialog id="lightbox" class="lightbox">
+      <dialog id="lightbox" class="lightbox" aria-label="Vista ampliada de imagen">
         <button class="lightbox-close" aria-label="Cerrar">×</button>
         <img id="lightboxImg" alt="" />
         <p id="lightboxCaption"></p>
@@ -70,6 +61,15 @@
           <button id="nextBtn" class="btn small" aria-label="Siguiente">›</button>
         </div>
       </dialog>
+    </section>
+
+    <section class="features container">
+      <ul class="feature-list">
+        <li><span>✓</span> Ubicación privilegiada en el casco antiguo</li>
+        <li><span>✓</span> Suites con diseño mediterráneo</li>
+        <li><span>✓</span> Cancelación flexible</li>
+        <li><span>✓</span> Wi‑Fi de alta velocidad</li>
+      </ul>
     </section>
 
     <section id="contacto" class="contact-section">
